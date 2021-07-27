@@ -3,7 +3,7 @@ let login =(req,res) =>{
     res.send('login 입니다')
 }
 
-let join = (res,res) =>{
+let join = (req,res) =>{
     res.send('join')
 }
 
