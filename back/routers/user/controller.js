@@ -1,17 +1,23 @@
-const {Board,User,Comment,Weather} = require('../../models')
-let login = async (req,res) =>{
-    let ress = await Weather.create({emo:'emo',text:'text'})
-    let resss = await Weather.findOne({
-        where:{
-            id:1
-        }
-    })
-    
-    
+
+let login =(req,res) =>{
     res.send('login 입니다')
 }
 
+let join = (req,res) =>{
+    res.send('join')
+}
+
+let info = (req,res)=>{
+    res.send('info')
+}
+ 
+let info_modify = (req,res) =>{
+    res.send('info_modify')
+}
 
 module.exports={
-    login
+    login,
+    join,
+    info,
+    info_modify,
 }

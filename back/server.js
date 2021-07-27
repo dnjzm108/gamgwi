@@ -2,6 +2,11 @@ const express = require('express')
 const app = express()
 const router = require('./routers/index')
 const {sequelize} = require('./models')
+const bodyparser = require('body-parser')
+const session = require('express-session')
+
+
+app.use(bodyparser.urlencoded({extended:false}))
 
 sequelize.sync({force:true})
 .then(()=>{
@@ -19,7 +24,7 @@ sequelize.sync({force:true})
 
 
 
-app.use('/',router)
+//app.use('/',router)
 
 app.listen(3500,()=>{
     console.log('server start port:3500');
