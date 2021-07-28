@@ -1,17 +1,18 @@
 import Head from 'next/head'
-import JoinBtn from "../component/JoinBtn"
+import WebLayout from '../component/layout/webLayout'
 import LoginBtn from "../component/LoginBtn"
 import Logo from "../component/Logo"
 
-const Index = ()=>{
-    return(
+const Index = () => {
+    return (
         <>
             <Head>
                 <title>Gamgwi</title>
             </Head>
-            <Logo/>
-            <LoginBtn/>
-            <JoinBtn/>
+            <WebLayout>
+                <Logo />
+                <LoginBtn />
+            </WebLayout>
         </>
     )
 }
