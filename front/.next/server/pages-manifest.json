@@ -2,7 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/likes": "pages/likes.js",
   "/write": "pages/write.js",
-  "/": "pages/index.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
+  "/list": "pages/list.js",
+  "/home": "pages/home.js",
+  "/info": "pages/info.js"
 }
