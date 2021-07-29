@@ -14,13 +14,15 @@ export default Logo
 
 const LogoWrap = Styled.div`
     width : 100%;
-    height : 80%;
-    background : #dfdfb6;
+    height : 90%;
+    padding-top : 20%;
+    box-sizing : border-box;
+    //background : #dfdfb6;
 
     @media only screen and (min-width:768px){
         // PC 버전
-        
-        min-height : 500px;
+        padding-top : 0;
+        //min-height : 500px;
         
     }
 `
@@ -29,7 +31,7 @@ const LogoImg = Styled.img`
     display : block;
     margin : 0 auto;
     width : 100%;
-    height : 500px;
+    height : auto;
     @media only screen and (min-width:768px){
         // PC 버전
         width : 70%;

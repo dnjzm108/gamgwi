@@ -9,7 +9,8 @@ import PermIdentityRoundedIcon from '@material-ui/icons/PermIdentityRounded';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > svg': {
-            margin: theme.spacing(2),
+            //margin: theme.spacing(2),
+            margin : '20px',
         },
     },
 }));
