@@ -2,9 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/likes": "pages/likes.js",
-  "/write": "pages/write.js",
-  "/list": "pages/list.js",
-  "/home": "pages/home.js",
-  "/info": "pages/info.js"
+  "/write": "pages/write.js"
 }

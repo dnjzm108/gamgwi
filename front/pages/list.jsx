@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import PostList from "../component/PostList"
+import PostList from '../component/list/PostList'
 import WebLayout from "../component/layout/webLayout"
 
 const List = () => {
