@@ -6,8 +6,10 @@ const WebLayout = ({ children }) => {
         <>
             <WebWrap>
                 <WebInnerWrap>
-
-                    {children}
+                    <WebHeight>
+                        aaa
+                        {children}
+                    </WebHeight>
                     <MobileMenuBar />
 
                 </WebInnerWrap>
@@ -34,7 +36,7 @@ const WebWrap = Styled.div`
 
 const WebInnerWrap = Styled.div`
     // 모바일 버전
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     //background : #afa6a6;
     
@@ -44,6 +46,12 @@ const WebInnerWrap = Styled.div`
         height: 100vh;
         margin : 0 auto;
     }
+`
+
+const WebHeight = Styled.div`
+    width: 100%;
+    height: 85vh;
+    background : #d3adad;
 `
 
 /* web ver 1200 margin 0 auto */

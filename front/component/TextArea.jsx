@@ -58,7 +58,7 @@ const InputContent = Styled.textarea`
 
     @media only screen and (min-width:768px){
         width: 99.5%;
-        height: 15vw;
+        height: 47vh;
     }
 `
 

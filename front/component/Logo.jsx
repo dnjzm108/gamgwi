@@ -14,7 +14,7 @@ export default Logo
 
 const LogoWrap = Styled.div`
     width : 100%;
-    height : 90%;
+    height : auto;
     padding-top : 20%;
     box-sizing : border-box;
     //background : #dfdfb6;

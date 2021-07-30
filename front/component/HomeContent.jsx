@@ -1,25 +1,25 @@
 import Styled from "styled-components"
+import Logo from "./Logo"
 
-const HomeContent = ()=>{
+const HomeContent = () => {
     return (
         <>
-            <div>
-                <HomeLogo>
-                    <img src="/logo.png" alt="" />
-                </HomeLogo>
-                오늘은 어떤 글귀를 발견하셨나요 <br />
-                광고 영역
-            </div>
+            <HomeWrap>
+                <Logo />
+                <HomeMent>
+                    <p>오늘은 어떤 글귀를 발견하셨나요 </p>
+                    <div>광고</div>
+                </HomeMent>
+            </HomeWrap>
         </>
     )
 }
 
 export default HomeContent
 
-const HomeLogo = Styled.div`
-    & > img {
-        display : block;
-        width : 300px;
-        height : 300px;
-    }
+const HomeWrap = Styled.div`
+    width : 100%;
+`
+const HomeMent = Styled.div`
+    text-align : center;
 `

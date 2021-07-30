@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 const MenuBarWrap = Styled.div`
     position : absolute;
     bottom : 0;
-    width : 100%;
+    width: auto;
     height : 70px;
     border-top: 1px solid #e4e4e4;
     margin-top: 30px;
