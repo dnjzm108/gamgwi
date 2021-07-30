@@ -1,5 +1,5 @@
 import Styled from "styled-components"
-import MobileMenuBar from "../MobileMenuBar"
+import MobileMenuBar from "../common/MobileMenuBar"
 
 const WebLayout = ({ children }) => {
     return (
@@ -51,7 +51,7 @@ const WebInnerWrap = Styled.div`
 const WebHeight = Styled.div`
     width: 100%;
     height: 85vh;
-    background : #d3adad;
+    background : #bbb4b4;
 `
 
 /* web ver 1200 margin 0 auto */

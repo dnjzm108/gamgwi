@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import WebLayout from "../component/layout/webLayout"
-import HomeContent from '../component/HomeContent'
+import HomeContent from '../component/home/HomeContent'
 
 const Home = () => {
     return (

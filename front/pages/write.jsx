@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import { makeStyles } from '@material-ui/core/styles';
 import WebLayout from "../component/layout/webLayout";
-import TodayWeather from "../component/TodayWeather";
+import TodayWeather from "../component/write/TodayWeather";
 import Styled from "styled-components";
-import TextArea from "../component/TextArea";
+import TextArea from "../component/write/TextArea";
+
 
 const Write = () => {
     

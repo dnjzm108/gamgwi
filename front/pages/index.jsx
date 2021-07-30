@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Styled from 'styled-components'
-import LoginBtn from "../component/LoginBtn"
-import Logo from "../component/Logo"
+import LoginBtn from "../component/common/LoginBtn"
+import Logo from "../component/common/Logo"
 
 const Index = () => {
     return (
