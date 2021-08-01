@@ -20,11 +20,7 @@ module.exports = class Comment extends Sequelize.Model{
                 type:Sequelize.STRING(20),
                 allowNull:false
             },
-            like:{
-                type:Sequelize.INTEGER,
-                allowNull:false,
-                defaultValue:0
-            },
+            
             
            
         },{

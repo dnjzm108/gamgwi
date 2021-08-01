@@ -4,43 +4,19 @@ const moment = require('moment')
 module.exports = class User extends Sequelize.Model{
     static init(sequelize){
         return super.init({
-            name:{
+            userIdx:{
                 type:Sequelize.STRING(10),
-                allowNull:false
+                allowNull:true
             },
             gender:{
                 type:Sequelize.BOOLEAN,
                 allowNull:true
             },
-            passWord:{
-                type:Sequelize.INTEGER,
-                allowNull:false
-            },
-            email:{
-                type:Sequelize.STRING(50),
-                allowNull:true,
-                unique:true
-            },
-            number:{
-                type:Sequelize.INTEGER,
-                allowNull:false,
-                unique:true
-            },
-            nickname:{
+            nickName:{
                 type:Sequelize.STRING(20),
+                unique:true,
                 allowNull:false,
             },
-            birth:{
-                type:Sequelize.DATE,
-                allowNull:false,
-                get:function(){
-                    return moment(this.getDataValue('birth')).format('YYYY-MM-DD')
-                }
-            },
-            level:{
-                type:Sequelize.STRING(20),
-                allowNull:false,
-            }
         },{
             sequelize,
             timestamps:false,
@@ -50,6 +26,9 @@ module.exports = class User extends Sequelize.Model{
             charset:'utf8',
             collate:'utf8_general_ci'
         })
+    }
+    static associate(db){
+        db.User.hasMany(db.Board,{foreignKey:'nickName',sourceKey:'nickName'})
     }
 
 }
