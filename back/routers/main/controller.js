@@ -4,7 +4,8 @@ let first_main = (req,res) =>{
     res.send('first_main')
 }
 
-let main =(req,res) =>{
+let main = (req,res) =>{
+    
     res.send('main')
 }
 

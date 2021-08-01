@@ -1,9 +1,10 @@
-
+const {User} = require('../../models')
 let login =(req,res) =>{
     res.send('login 입니다')
 }
 
-let join = (req,res) =>{
+let join = async(req,res) =>{
+    await User.create()
     res.send('join')
 }
 

@@ -16,7 +16,7 @@ module.exports = class Board extends Sequelize.Model{
                     return moment(this.getDataValue('date')).format('YYYY-MM-DD-hh-mm-dd')
                 }                
             },
-            writer_name:{
+            nickName:{
                 type:Sequelize.STRING(20),
                 allowNull:false,
             },
@@ -28,14 +28,15 @@ module.exports = class Board extends Sequelize.Model{
             like:{
                 type:Sequelize.INTEGER,
                 allowNull:false,
-                defaultValue:0
+                defaultValue:0,
+                comment:'좋아요수'
             },
             content:{
                 type:Sequelize.STRING(300),
                 allowNull:true
             },
             report:{
-                type:Sequelize.STRING(50),
+                type:Sequelize.BOOLEAN,
                 allowNull:false,
                 defaultValue:0,
                 comment:'신고'
@@ -51,8 +52,7 @@ module.exports = class Board extends Sequelize.Model{
             },
             emo_idx:{
                 type:Sequelize.INTEGER,
-                unique:True,
-                allowNull:false,
+                allowNull:true,
                 comment:'날씨이모티콘idx'
             }
         },{
@@ -64,5 +64,8 @@ module.exports = class Board extends Sequelize.Model{
             charset:'utf8',
             collate:'utf8_general_ci'
         })
+    }
+    static associate(db){
+        db.Board.belongsTo(db.User,{foreignKey:'nickName',sourceKey:'nickName'})
     }
 }
