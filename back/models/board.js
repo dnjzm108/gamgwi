@@ -44,7 +44,8 @@ module.exports = class Board extends Sequelize.Model{
             watch:{
                 type:Sequelize.BOOLEAN,
                 allowNull:false,
-                defaultValue:0
+                defaultValue:0,
+                comment:'공개비공개여부 0=공개 1=비공개'
             },
             category:{
                 type:Sequelize.STRING(20),
@@ -54,7 +55,19 @@ module.exports = class Board extends Sequelize.Model{
                 type:Sequelize.INTEGER,
                 allowNull:true,
                 comment:'날씨이모티콘idx'
-            }
+            },
+            backgroundImgIdx:{
+                type:Sequelize.INTEGER,
+                allowNull:true,
+            },
+            font:{
+                type:Sequelize.TEXT,
+                allowNull:true,
+            },
+            fontColor:{
+                type:Sequelize.STRING(50),
+                allowNull:true,
+            },    
         },{
             sequelize,
             timestamps:false,
@@ -64,8 +77,5 @@ module.exports = class Board extends Sequelize.Model{
             charset:'utf8',
             collate:'utf8_general_ci'
         })
-    }
-    static associate(db){
-        db.Board.belongsTo(db.User,{foreignKey:'nickName',sourceKey:'nickName'})
     }
 }
