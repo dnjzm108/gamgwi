@@ -13,21 +13,24 @@ module.exports = class BackgroundImg extends Sequelize.Model{
                 allowNull:true
             },
             img2:{
-                type:Sequelize.Text,
+                type:Sequelize.TEXT,
                 allowNull:true
             },
             imgTitle2:{
                 type:Sequelize.STRING(50),
                 allowNull:true
-            }
+            },
         },{
             sequelize,
             timestamps:false,
             modelName:'BackgroundImg',
-            tableName:'BackgroundImgs',
+            tableName:'backgroundImgs',
             paranoid:false,
             charset:'utf8',
             collate:'utf8_general_ci'
         })
+    }
+    static associate (db){
+        db.BackgroundImg.hasMany(db.Board,{foreignKey:'backgroundImgIdx'})
     }
 }

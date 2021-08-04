@@ -32,7 +32,7 @@ let user_list = async (req,res) =>{
     res.json(userList)
 }
 
-let user_detail = (req,res) =>{
+let user_detail = async (req,res) =>{
     let {idx} = req.query
     let userDetail = await User.findAll({where:{id:idx}})
 }

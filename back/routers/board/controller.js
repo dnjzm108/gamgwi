@@ -1,15 +1,16 @@
-const {Board,User} = require('../../models')
+const {Board,User,Comment} = require('../../models')
 // 주석 부분이 코드 짜둔거!!!!!!!! 나중에 프론트랑 연결 우선 오류 나지 않게끔 주석 처리
-let view_reply = (req,res) =>{
+let view_reply = async (req,res) =>{
     // 이부분은 특정 글귀를 본 페이지
     // 해당 페이지에서 좋아요를 누르거나 댓글 작성시!
-    //let {url} = req.query
-
-    res.send('view')
+    //let {url} = req.query(
+    await Comment.create({commenter_name:'algml',category:'글귀',titleIdx:1})
+    let comment = await Comment.findAll({})
+    res.send(comment)
 }
 
 let write = async(req,res) =>{
-    await Board.create({title:'tt',nickName:'al',watch:1,report:0,content:'d',category:'글귀'})
+    await Board.create({title:'tt',nickName:'al',watch:0,report:0,content:'d',category:'고민',commentIdx:1})
     res.send('write')
 }
 
