@@ -4,6 +4,12 @@ const moment = require('moment')
 module.exports = class Board extends Sequelize.Model{
     static init(sequelize){
         return super.init({
+            id:{
+                type:Sequelize.INTEGER,
+                primaryKey:true,
+                unique:true,
+                comment:'고유번호'
+            },
             title:{
                 type:Sequelize.STRING(30),
                 allowNull:false
@@ -67,15 +73,23 @@ module.exports = class Board extends Sequelize.Model{
             fontColor:{
                 type:Sequelize.STRING(50),
                 allowNull:true,
-            },    
+            },
+            
         },{
             sequelize,
-            timestamps:false,
+            timestamps:true,
             modelName:'Board',
             tableName:'boards',
-            paranoid:false,
+            paranoid:true,
             charset:'utf8',
             collate:'utf8_general_ci'
         })
     }
+   static associate(db){
+       db.Board.hasMany(db.Comment,{
+           foreignKey:'titleIdx',
+           sourceKey:'id'
+
+       })
+   }
 }

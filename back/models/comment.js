@@ -20,18 +20,24 @@ module.exports = class Comment extends Sequelize.Model{
                 type:Sequelize.STRING(20),
                 allowNull:false
             },
-            
-            
-           
+            titleIdx:{
+                type:Sequelize.INTEGER,
+            }           
         },{
             sequelize,
-            timestamps:false,
+            timestamps:true,
             modelName:'Comment',
             tableName:'comments',
-            paranoid:false,
+            paranoid:true,
             charset:'utf8',
             collate:'utf8_general_ci'
         })
     }
-
+    static associate(db){
+        db.Board.belongsTo(db.Board,{
+            foreignKey:'titleIdx',
+            targetKey:'id',
+            onDelete:'Cascade'
+        })
+    }
 }
