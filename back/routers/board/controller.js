@@ -1,5 +1,20 @@
 const {Board,User,Comment} = require('../../models')
 // 주석 부분이 코드 짜둔거!!!!!!!! 나중에 프론트랑 연결 우선 오류 나지 않게끔 주석 처리
+const multer = require('multer')
+const path = require('path')
+
+const upload = multer({
+    storage:multer.diskStorage({
+        destination:function(req,file,callback){
+            callback(null,'uploads')
+        },
+        filename:function(req,file,callback){
+            callback(null,new Date().valueOf()+path.extname(file.originalname))
+        }
+    })
+})
+
+
 let view_reply = async (req,res) =>{
     // 이부분은 특정 글귀를 본 페이지
     // 해당 페이지에서 좋아요를 누르거나 댓글 작성시!

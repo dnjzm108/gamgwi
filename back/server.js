@@ -13,8 +13,6 @@ sequelize.sync({force:true})
     console.log('db fail',err)
 })
 
-
-
 app.use(bodyparser.urlencoded({extended:false}))
 
 
