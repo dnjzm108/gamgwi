@@ -1,29 +1,40 @@
+const {Board,User} = require('../../models')
+
 let admin = (req,res) =>{
+
     res.send('admin')
 }
 
-let board_list = (req,res) =>{
-    res.send('board_list')
+let board_list = async (req,res) =>{
+    let list = await Board.findAll({})
+    res.json(list)
 }
 
-let board_view = (req,res) =>{
-    res.send('board_view')
+let board_view = async (req,res) =>{
+    let {idx} = req.query
+    let boardView = await Board.findAll({where:{id:idx}})
+    res.json(boardView)
 }
 
-let report_list = (req,res) =>{
-    res.send('report_list')
+let report_list = async (req,res) =>{
+    let reportList = await Board.findAll({where:{report:1}})
+    res.json(reportList)
 }
 
-let report_detail = (req,res) =>{
-    res.send('report_detail')
+let report_detail = async (req,res) =>{
+    let {idx} = req.query
+    let reportView = await Board.findAll({where:{id:idx}})
+    res.json(reportView)
 }
 
-let user_list = (req,res) =>{
-    res.send('user_list')
+let user_list = async (req,res) =>{
+    let userList = await User.findAll({})
+    res.json(userList)
 }
 
-let user_detail = (req,res) =>{
-    res.send('user_detail')
+let user_detail = async (req,res) =>{
+    let {idx} = req.query
+    let userDetail = await User.findAll({where:{id:idx}})
 }
 
 module.exports={

@@ -1,6 +1,7 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+<<<<<<< HEAD
   "/_document": "pages/_document.js",
   "/write": "pages/write.js",
   "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
@@ -8,4 +9,7 @@
   "/likes": "pages/likes.js",
   "/home": "pages/home.js",
   "/info": "pages/info.js"
+=======
+  "/_document": "pages/_document.js"
+>>>>>>> b2fb9f66278da0a7e781d8d0ccac9ad51a26b5a4
 }

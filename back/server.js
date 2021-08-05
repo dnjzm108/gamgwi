@@ -3,7 +3,7 @@ const app = express()
 const router = require('./routers/index')
 const bodyparser = require('body-parser')
 const session = require('express-session')
-const {sequelize} = require('sequelize')
+const {sequelize} = require('./models')
 
 sequelize.sync({force:true})
 .then(()=>{
@@ -12,7 +12,6 @@ sequelize.sync({force:true})
 .catch((err)=>{
     console.log('db fail',err)
 })
-
 
 app.use(bodyparser.urlencoded({extended:false}))
 

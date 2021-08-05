@@ -11,6 +11,8 @@ const Weather = require('./weather.js')
 const Board = require('./board.js')
 const Comment = require('./comment.js')
 const User = require('./User.js')
+const Like = require('./like.js')
+const BackgroundImg = require('./backgroundImg')
 
 
 let sequelize;
@@ -40,6 +42,8 @@ db.Weather = Weather
 db.Comment = Comment
 db.User = User
 db.Board = Board
+db.Link = Like
+db.BackgroundImg = BackgroundImg
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
@@ -48,5 +52,7 @@ Comment.init(sequelize)
 User.init(sequelize)
 Board.init(sequelize)
 Weather.init(sequelize)
+Like.init(sequelize)
+BackgroundImg.init(sequelize)
 
 module.exports = db;
