@@ -2,5 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/write": "pages/write.js"
+  "/write": "pages/write.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/list": "pages/list.js",
+  "/likes": "pages/likes.js",
+  "/home": "pages/home.js",
+  "/info": "pages/info.js"
 }
